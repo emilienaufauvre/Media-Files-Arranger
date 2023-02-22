@@ -27,9 +27,11 @@ Where:
 
 ## Notes
 
+Works only on Windows and Unix platforms.
+
 The default renaming format and time zone can be modified on top of the 
 `main.py` file:
-- The default renaming format is `YYYY:mm:dd_HH:MM:SS:MM`.
+- The default renaming format is `YYYY:mm:dd_HH:MM:SS:ffffff`.
 - The default time zone is `Europe/Paris`.
 
 ## Attributions
