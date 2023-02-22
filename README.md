@@ -6,7 +6,7 @@
     <img src="res/icon.png" width="200" height="200">
 	<h1>Media Files Arranger</h1>
 	<p>
-    <b>Parse scattered media files in a tree structure to store them in the 
+    <b>Parse scattered media files in a tree structure to store them in a
        same folder using a naming convention based on file creation time.</b>
 	</p>
 	<br>
