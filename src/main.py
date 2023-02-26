@@ -23,7 +23,6 @@ def check_usage_and_get_args() -> (str, str):
     """
     Check the correct usage from CLI, and extract the arguments.
 
-    :rtype: (str, str).
     :return: A path to the root directory of a tree structure to be parsed,
         and a path to an existing directory that will be used to store the
         parsed files.
@@ -62,7 +61,6 @@ def set_logger() -> None:
     Set up the default logger to catch every message, and to write them on
     stdout.
 
-    :rtype: NoneType.
     :return: None.
     """
     logging.basicConfig(
@@ -78,11 +76,10 @@ def parse_pictures_and_videos(dir_to_be_parsed: str,
     Parse the given tree, find media files, rename them, and store them in the
     given directory.
 
-    :param str dir_to_be_parsed: A path to the root directory of a tree
+    :param dir_to_be_parsed: A path to the root directory of a tree
         structure to be parsed,
-    :param str dir_to_store_parsed_files: A path to an existing directory that
+    :param dir_to_store_parsed_files: A path to an existing directory that
         will be used to store the parsed files.
-    :rtype: NoneType.
     :return: None.
     """
     # Parse all the directories in the given tree.
@@ -118,7 +115,7 @@ def get_creation_time(path: str) -> Date:
     """
     Get the creation time of a file using file system.
 
-    :param str path: A path to an existing file.
+    :param path: A path to an existing file.
     :return: A date.
     """
     f = pathlib.Path(path)
@@ -131,6 +128,14 @@ def get_creation_time(path: str) -> Date:
 
 
 def extract_creation_time(path: str, name: str) -> Date:
+    """
+    Extract the file creation time, using metadata from the file system,
+    and metadata from the file name.
+
+    :param path: A path to an existing file.
+    :param name: A name of an existing file.
+    :return: A date.
+    """
     # Get file system creation time.
     creation_time_fs = get_creation_time(path)
     # Get file name creation time.
@@ -143,7 +148,6 @@ def extract_creation_time(path: str, name: str) -> Date:
 
 
 def main():
-    s = "WP_2023_12_12_12_12"
     input_dir, output_dir = check_usage_and_get_args()
     set_logger()
     parse_pictures_and_videos(input_dir, output_dir)
